@@ -1,0 +1,279 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+
+main > .container {
+    padding: 100px 15px 0;
+}
+
+.footer-title {
+    font-size: 25px;
+}
+
+.block-title {
+    margin-bottom: 30px;
+}
+
+.username {
+    font-size: 18px;
+    color:#ffffff
+}
+
+.error-message {
+    margin-bottom: 5px;
+    color: darkred;
+    font-weight: bold;
+}
+
+.question-ans{
+    font-weight: bold;
+    font-size: 15px;
+    margin-right: 7px;
+    padding-top: 7px;
+    color: #1a1d20;
+}
+
+.questions-item {
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-inline: 15px;
+    margin-bottom: 30px;
+}
+
+.questions-item > .col-3 {
+    padding-left: 0;
+}
+
+.question-image {
+    position: relative;
+    width: 100%;
+}
+
+.question-title {
+    font-weight: bold;
+    font-size: 30px;
+    font-family: Helvertica, serif;
+}
+
+.question-text {
+    font-size: 18px;
+    font-family: Helvetica, serif;
+}
+
+.question-details {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.tags {
+    margin-left: 30px;
+}
+
+.answers_count {
+    margin-left: 30px;
+}
+
+.tag{
+    margin-top: 7px;
+    margin-left: 7px;
+}
+
+.group1{
+    font-weight: bold;
+    font-family: Helvertica, serif;
+}
+
+.info-bar {
+    margin-left: 100px;
+}
+
+.best-members {
+    margin-top: 30px;
+}
+
+.members {
+    max-width: 200px;
+    font-size: 20px;
+}
+
+.badge {
+    font-size: 16px;
+    margin: 2px;
+}
+
+.pagination {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.tag-button{
+    margin-left: 9px;
+    border: 1px solid rgb(128, 128, 128);
+    color: #1a1d20;
+    font-size: 15px;
+}
+
+/*==============*/
+
+.ask_question {
+    margin-bottom: 35px;
+}
+
+.form-error {
+    color: darkred;
+
+}
+
+.question-field {
+    border: 2px solid black;
+}
+
+/*Question page*/
+.question {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-inline: 15px;
+    margin-bottom: 10px;
+}
+
+.question > .col-3 {
+    padding-left: 0;
+}
+
+/*Answer*/
+.answer {
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-inline: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.answer > .col-3 {
+    padding-left: 0;
+}
+
+.answer-image {
+    position: relative;
+    width: 75%;
+}
+
+.answer-title {
+    font-size: 30px;
+    font-family: Helvetica, serif;
+    font-weight: bold;
+}
+
+.answer-text {
+    font-size: 18px;
+    font-family: Helvetica, serif;
+}
+
+.answer-field {
+    border: 2px solid black;
+    padding-left: 5px;
+    height: 200px;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/*Like/Dislike button*/
+:root {
+    --button: #ffffff;
+    --buttonhover: #A9A9A9;
+    --color: #000000;
+    /* ... other variables ... */
+}
+
+.like-dislike-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.answer-like-dislike {
+    width: 75%;
+}
+.like, .dislike {
+    background-color: var(--button);
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.like-count {
+    font-size: 18px;
+}
+
+.like:hover, .dislike:hover {
+    background-color: var(--buttonhover);
+}
+
+.like i, .dislike i {
+    font-size: 20px;
+}
+
+/*Checkbox*/
+.checkbox-container {
+    margin-top: 20px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    color: var(--color); /* Use your existing text color */
+}
+
+.correct-checkbox {
+    margin-right: 5px;
+}
+
+/*Login/Logout*/
+.log-field {
+    border: 2px solid black;
+    width: 300px;
+}
+
+/* Стиль активного класса и кнопки при наведении курсора мыши */
+a.active_custom, .page-link:hover {
+  background-color: #666;
+  color: white;
+}
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.btn-bd-primary {
+    --bd-violet-bg: #712cf9;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #6528e0;
+    --bs-btn-hover-border-color: #6528e0;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #5a23c8;
+    --bs-btn-active-border-color: #5a23c8;
+}
+
+.bd-mode-toggle {
+    z-index: 1500;
+}
+
+.bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+}

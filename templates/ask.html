@@ -1,0 +1,34 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+<h2 class="block-title">New Question</h2>
+{% if form.non_field_errors %}
+    <div class="error-message">
+        {% for error in form.non_field_errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<form action="{% url 'ask' %}" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+    {% if field.errors %}
+        <div class="error-message">
+            {% for error in field.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+    {% endif %}
+    <div class="row ask_question">
+        <div class="col-1" style="margin-right: 10px">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        </div>
+        {{ field }}
+    </div>
+    {% endfor %}
+
+    <input class="btn btn-outline-success" style="margin-left: 70px" type="submit" value="ASK!">
+</form>
+{% endblock %}

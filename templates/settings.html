@@ -1,0 +1,45 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+<h2 class="block-title">Settings: PupAllWorld</h2>
+
+{% if form.non_field_errors %}
+    <div class="error-message">
+        {% for error in form.non_field_errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<form action="{% url 'settings' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for field in form %}
+        {% if field.errors %}
+            <div class="error-message">
+                {% for error in field.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class="row ask_question">
+            <div class="col-2" style="margin-right: 10px">
+                <label class="form-label">{{ field.label }}</label>
+            </div>
+            {{ field }}
+        </div>
+    {% endfor %}
+
+    <span>Your avatar now:</span>
+    <div class="col-9" style="margin-left: 145px; margin-bottom: 30px">
+        {% if user.profile.image %}
+            <img src="{{ user.profile.image.url }}" alt="User Photo" width="100px" height="100px">
+        {% else %}
+            <img src="{% static 'img/defolt.jpg' %}" alt="Default Photo" width="100px" height="100px">
+        {% endif %}
+    </div>
+
+    <input class="btn btn-outline-success" style="margin-left: 145px; width: 90px" type="submit" value="Save">
+</form>
+{% endblock %}

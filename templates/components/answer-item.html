@@ -1,0 +1,19 @@
+{% load static %}
+
+<div class="row question">
+    <div class="col-3">
+        <img src="{% static '/img/defolt.jpg' %}" alt="" class="answer-image">
+    </div>
+    <div class="col-9">
+        <div class="answer-text">{{ answer.text }}</div>
+        <div class="question-details">
+            <span class="question-ans">Like:</span>
+            <span class="badge bg-danger-subtle question-ans">{{ answer.rating }}</span>
+            <a href=""><span class="badge bg-danger question-ans">-</span></a>
+            <a href=""> <span class="badge bg-success question-ans">+</span></a>
+            <label class="btn btn-primary" style="margin-bottom: 5px; margin-left: 30px;">
+                <input type="checkbox"> Correct
+            </label>
+        </div>
+    </div>
+</div>

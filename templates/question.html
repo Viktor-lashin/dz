@@ -1,0 +1,61 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row question">
+    <div class="col-3">
+        <img src="{% static '/img/defolt.jpg' %}" alt="" class="question-image">
+    </div>
+    <div class="col-9">
+        <div class="question-title">{{ question.title }}</div>
+        <div class="question-text">{{ question.content }}
+        </div>
+        <div class="question-details">
+            <span class="question-ans">Like:</span>
+            <span class="badge bg-danger-subtle question-ans">{{ question.rating }}</span>
+            <a href=""><span class="badge bg-danger question-ans">-</span></a>
+            <a href=""> <span class="badge bg-success question-ans">+</span></a>
+
+            <span class="tags">Tags:</span>
+            {% for tag in question.tags.all %}
+            <a class="tag" href="{% url 'tag' tag_name=tag %}">{{ tag }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<hr style="height:2px; border-width:0; color: black; background-color: black;">
+
+{% for answer in pagination_answers %}
+{% include 'components/answer-item.html' %}
+{% endfor %}
+
+{% include 'components/pagination.html' with items=pagination_answers %}
+
+<hr style="height:2px; border-width:0; color: black; background-color: black;">
+{% if form.non_field_errors %}
+    <div class="error-message">
+        {% for error in form.non_field_errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    </div>
+{% endif %}
+<form action="{% url 'question' question_id=question.id %}" method="post">
+    {% csrf_token %}
+    {% if field.errors %}
+        <div class="error-message">
+            {% for error in field.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+    {% endif %}
+    <div class="row ask_question">
+        {{ form.answer}}
+    </div>
+
+    <input class="btn btn-outline-secondary" style="margin-bottom: 30px" type="submit" value="Answer!">
+</form>
+
+
+{% endblock %}

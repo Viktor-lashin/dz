@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-4 block-title">
+           <h2>New Questions</h2>
+        </div>
+        <div class="col-3" style="margin-top: 10px">
+            <a href="{% url 'hot' %}">Hot Questions</a>
+        </div>
+    </div>
+
+    {% for question in questions %}
+        {% include 'components/question-item.html' %}
+    {% endfor %}
+
+    {% include 'components/pagination.html' %}
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="row block-title">
+        <h2>Tag: {{ tag }}</h2>
+    </div>
+
+    {% for question in questions %}
+        {% include 'components/question-item.html' %}
+    {% endfor %}
+
+    {% include 'components/pagination.html' with items=questions %}
+
+{% endblock %}

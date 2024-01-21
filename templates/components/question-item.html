@@ -1,0 +1,25 @@
+{% load static %}
+
+<div class="row question">
+    <div class="col-3">
+        <img src="{% static '/img/defolt.jpg' %}" alt="" class="question-image">
+    </div>
+    <div class="col-9">
+        {% block reg %}
+        <div class="question-title"><a href="{% url 'question' question_id=question.id %}">{{question.title}}</a></div>
+        {% endblock %}
+        <div class="question-text">{{question.content}}</div>
+        <div class="question-details">
+            <span class="question-ans">Like:</span>
+            <span class="badge bg-danger-subtle question-ans">{{ question.rating }}</span>
+            <a href=""><span class="badge bg-danger question-ans">-</span></a>
+            <a href=""> <span class="badge bg-success question-ans">+</span></a>
+            <a class="answers_count" href="{% url 'question' question_id=question.id %}">answers ({{ question.answers_count }})</a>
+
+            <span class="tags">Tags:</span>
+            {% for tag in question.tags.all %}
+            <a class="tag" href="{% url 'tag' tag_name=tag %}">{{ tag }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
